@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/new-style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=0ec1654d-9727-4ff1-9ec2-83b404522a40&lang=ru_RU" type="text/javascript"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div class="calc-wrp" id="client">
+  <div class="bird-tab">
+    <div class="bird-tab__menu">
+      <div @click="showTab(1)" class="bird-tab__link" :class="{activeTab: tab == 1 || tab == 3}">
+        <span class="bird-tab__span">Инфрастукрура</span>
+        <div class="bird-tab__line" :class="{animation: tab == 1 || tab == 3}"></div>
+      </div>
+      <div @click="showTab(2)" class="bird-tab__link bird-tab__link--jk" :class="{activeTab: tab == 2}" >
+        <span class="bird-tab__span">Жилые комплексы</span>
+        <div class="bird-tab__line" :class="{animation: tab == 2}"></div>
+      </div>
+    </div>
+    <div class="bird-tab__content">
+      <!-- ИНФРАСТРУКТУРА -->
+      <div class="tab" id="infra" v-if="tab == 1">
+        <div class="tab__map-wrp">
+          <div class="tab__map-div">
+
+
+              <div class="tab__icon-div run1">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon">
+                    <img src="images/icon/map-icon-run.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div trees1">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-trees">
+                    <img src="images/icon/map-icon-trees.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div trees2">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-trees">
+                    <img src="images/icon/map-icon-trees.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div trees3">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-trees">
+                    <img src="images/icon/map-icon-trees.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div trees4">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-trees">
+                    <img src="images/icon/map-icon-trees.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div trees5">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-trees">
+                    <img src="images/icon/map-icon-trees.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description" id="run1">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+
+              <div class="tab__icon-div sea-park1">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-sea-park">
+                    <img src="images/icon/icon-sea-park.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description" id="run1">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div cinema1">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-cinema">
+                    <img src="images/icon/map-icon-cinema.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description" id="run1">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div velo1">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-velo">
+                    <img src="images/icon/map-icon-velo.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description" id="run1">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div school1">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-school">
+                    <img src="images/icon/map-icon-school.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description">
+                  <p>Школа</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div school2">
+                <div class="tab__icon tab__icon--gray">
+                  <div class="tab__wrp-icon icon-school">
+                    <img src="images/icon/map-icon-school.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description">
+                  <p>Школа</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <!-- green -->
+
+              <div class="tab__icon-div gym1">
+                <div class="tab__icon tab__icon--green">
+                  <div class="tab__wrp-icon icon-gym">
+                    <img src="images/icon/map-icon-gym.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description" id="run1">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div bc1">
+                <div class="tab__icon tab__icon--green">
+                  <div class="tab__wrp-icon icon-bc">
+                    <img src="images/icon/map-icon-bc.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description" id="run1">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+              <div class="tab__icon-div bc2">
+                <div class="tab__icon tab__icon--green">
+                  <div class="tab__wrp-icon icon-bc">
+                    <img src="images/icon/map-icon-bc.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="tab-icon__description" id="run1">
+                  <p>бульвар</p>
+                </div>
+                <div class="sec-bird_icon-arrow"></div>
+              </div>
+
+
+              <div class="tab-desc tab-desc--inf">
+                <div class="tab-desc__row">
+                  <div class="tab-desc__wrap-img">
+                    <img class="tab-desc__img" src="images/map-logo-gl.png" alt="">
+                  </div>
+                  <div class="tab-desc__text">GREENLINE</div>
+                </div>
+                <div class="tab-desc__row">
+                  <div class="tab-desc__wrap-circle circle-green">
+                    <div class="tab-desc__inner-circle"></div>
+                  </div>
+                  <div class="tab-desc__text">Активные объекты</div>
+                </div>
+                <div class="tab-desc__row">
+                  <div class="tab-desc__wrap-circle circle-gray">
+                    <div class="tab-desc__inner-circle"></div>
+                  </div>
+                  <div class="tab-desc__text">Перспективные объекты</div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="map-icon__btn" @click="showTab(3)">
+          <img class="map-street__icon" src="images/icon-btn-map--green.png" alt="">
+          <p class="button__text">Показать на карте</p>
+        </div>
+
+      </div>
+      <!-- ЖИЛЫЕ КОМПЛЕКСЫ -->
+      <div class="tab" v-if="tab == 2">
+        <div class="tab__map-wrp">
+          <div class="tab__map-div tab__map-div--jk">
+            <div class="tab__note-div">
+              <!-- seoul -->
+              <div class="tab__icon-div--jk seoul1" @mouseenter="showTown('seoul')" @mouseleave="isVisibleSeoul = false">
+                <div class="tab__icon-rectangle--black rectangle-seoul">
+                  <div class="tab__wrap-icon icon-seoul">
+                    <img src="images/jk/logo-seoul.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="sec-bird_icon-arrow--jk icon-arrow--seoul"></div>
+              </div>
+              <div class="tab__town-div seoul-town1" v-bind:class="{ animation: isVisibleSeoul }">
+                <div class="town-div__wrap-img">
+                  <img class="town-div__img" src="images/jk/hover-seoul.png" alt="">
+                </div>
+              </div>
+              <!-- zelcv -->
+              <div class="tab__icon-div--jk zelcv1" @mouseenter="showTown('zeleniykartal')" @mouseleave="isVisibleZelCv = false">
+                <div class="tab__icon-rectangle--black rectangle-zelcv">
+                  <div class="tab__wrap-icon icon-zelcv">
+                    <img src="images/jk/logo-zeleniy-kvartal.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="sec-bird_icon-arrow--jk icon-arrow--zelcv"></div>
+              </div>
+              <div class="tab__town-div zelcv-town1" v-bind:class="{ animation: isVisibleZelCv }">
+                <div class="town-div__wrap-img zelcv-img">
+                  <img class="town-div__img" src="images/jk/hover-zeleniykartal.png" alt="">
+                </div>
+              </div>
+              <!-- asylmura -->
+              <div class="tab__icon-div--jk asylmura1" @mouseenter="showTown('asylmura')" @mouseleave="isVisibleAsylMura = false">
+                <div class="tab__icon-rectangle--black rectangle-asulmura">
+                  <div class="tab__wrap-icon icon-asulmura">
+                    <img src="images/jk/logo-asylmura.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="sec-bird_icon-arrow--jk icon-arrow--asylmura"></div>
+              </div>
+              <div class="tab__town-div asylmura-town1" v-bind:class="{ animation: isVisibleAsylMura }">
+                <div class="town-div__wrap-img asylmura-img">
+                  <img class="town-div__img" src="images/jk/hover-asylmura.png" alt="">
+                </div>
+              </div>
+              <!-- freedom -->
+              <div class="tab__icon-div--jk freedom1" @mouseenter="showTown('freedom')" @mouseleave="isVisibleFreedom = false">
+                <div class="tab__icon-rectangle--black rectangle-freedom">
+                  <div class="tab__wrap-icon icon-freedom">
+                    <img src="images/jk/logo-freedom.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="sec-bird_icon-arrow--jk icon-arrow--freedom"></div>
+              </div>
+              <div class="tab__town-div freedom-town1" v-bind:class="{ animation: isVisibleFreedom }">
+                <div class="town-div__wrap-img freedom1-img">
+                  <img class="town-div__img" src="images/jk/hover-freedom.png" alt="">
+                </div>
+              </div>
+
+
+              <!-- aruqala -->
+              <div class="tab__icon-div--jk aruqala1" @mouseenter="showTown('aruqala')" @mouseleave="isVisibleAruqala = false">
+                <div class="tab__icon-rectangle--black rectangle-aruqala">
+                  <div class="tab__wrap-icon icon-aruqala">
+                    <img src="images/jk/logo-aruqala.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="sec-bird_icon-arrow--jk icon-arrow--aruqala"></div>
+              </div>
+              <div class="tab__town-div aruqala-town1" v-bind:class="{ animation: isVisibleAruqala }">
+                <div class="town-div__wrap-img aruqala1-img">
+                  <img class="town-div__img" src="images/jk/hover-aruqala.png" alt="">
+                </div>
+              </div>
+
+
+              <!-- tokyo -->
+              <div class="tab__icon-div--jk tokyo1" @mouseenter="showTown('tokyo')" @mouseleave="isVisibleTokyo = false">
+                <div class="tab__icon-rectangle--black rectangle-tokyo">
+                  <div class="tab__wrap-icon icon-tokyo">
+                    <img src="images/jk/logo-tokyo.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="sec-bird_icon-arrow--jk icon-arrow--tokyo"></div>
+              </div>
+
+              <div class="tab__town-div tokyo-town1" v-bind:class="{ animation: isVisibleTokyo }">
+                <div class="town-div__wrap-img tokyo1-img">
+                  <img class="town-div__img" src="images/jk/hover-tokyo.png" alt="">
+                </div>
+              </div>
+              <!-- headliner -->
+              <div class="tab__icon-div--jk headliner1" @mouseenter="showTown('headliner')" @mouseleave="isVisibleHeadliner = false">
+                <div class="tab__icon-rectangle--black rectangle-headliner">
+                  <div class="tab__wrap-icon icon-headliner">
+                    <img src="images/jk/logo-headliner.png" alt="" class="img">
+                  </div>
+                </div>
+                <div class="sec-bird_icon-arrow--jk icon-arrow--headliner"></div>
+              </div>
+
+              <div class="tab__town-div headliner-town1" v-bind:class="{ animation: isVisibleHeadliner }">
+                <div class="town-div__wrap-img headliner1-img">
+                  <img class="town-div__img" src="images/jk/hover-headliner.png" alt="">
+                </div>
+              </div>
+
+
+              <div class="tab-desc tab-desc--jk">
+                <div class="tab-desc__row">
+                  <div class="tab-desc__wrap-circle circle-gray">
+                    <div class="tab-desc__inner-circle"></div>
+                  </div>
+                  <div class="tab-desc__text">СТРОЯТСЯ</div>
+                </div>
+                <div class="tab-desc__row">
+                  <div class="tab-desc__wrap-circle circle-green">
+                    <div class="tab-desc__inner-circle"></div>
+                  </div>
+                  <div class="tab-desc__text">Построено</div>
+                </div>
+                <div class="tab-desc__row">
+                  <div class="tab-desc__wrap-circle circle-dark">
+                    <div class="tab-desc__inner-circle"></div>
+                  </div>
+                  <div class="tab-desc__text">Сдано, продано</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div v-show="tabMap">
+        <div id="map4" class="tab__map" style="width: 600px; height: 400px"></div>
+        <div class="map-icon__btn" @click="showTab(1)">
+          <img class="map-street__icon" src="images/icon-btn-map--green.png" alt="">
+          <p class="button__text">Показать инфраструктуру</p>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<script>
+
+  new Vue({
+    el: '#client',
+    data: {
+      tab: 1,
+      tabMap: false,
+      isVisible: false,
+      isVisibleZelCv: false,
+      isVisibleHeadliner: false,
+      isVisibleSeoul: false,
+      isVisibleTokyo: false,
+      isVisibleFreedom: false,
+      isVisibleAsylMura: false,
+      isVisibleAruqala: false,
+    },
+    methods: {
+      showTab(index) {
+        console.log(index)
+        if(index <= 2) {
+          this.tab = index
+          this.tabMap = false  
+        } else {
+          this.tab = index
+          this.tabMap = true        
+        }
+      },
+      showTown(town) {
+        console.log(town);
+        // this.isVisible = true;
+        if(town == "zeleniykartal") {
+          this.isVisibleZelCv = true;
+        }
+        if(town == "asylmura") {
+          this.isVisibleAsylMura = true;
+        }
+        if(town == "headliner") {
+          this.isVisibleHeadliner = true;
+        }
+        if(town == "seoul") {
+          this.isVisibleSeoul = true;
+        }
+        if(town == "tokyo") {
+          this.isVisibleTokyo = true;
+        }
+        if(town == "freedom") {
+          this.isVisibleFreedom = true;
+        }
+        if(town == "aruqala") {
+          this.isVisibleAruqala = true;
+        }
+      },
+    },
+  });
+
+
+</script>
+
+<script src="js/ymap.js"></script>
+
+</body>
+</html>
