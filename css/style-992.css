@@ -1,0 +1,109 @@
+@media (max-width: 992px) { 
+
+    .tab {
+        overflow: auto;
+    }
+
+    .tab__map-wrp {
+        width: 1040px;
+        height: 585px;
+        position: relative;
+    }
+
+    .zelcv-img {
+        width: 20.1vw;
+        height: 20.2vw;
+        width: 199px;
+        height: 199px;
+    }
+
+    .zelcv-town1 {
+        right: 38.0%;
+        bottom: 80.2%;
+    }
+
+    .aruqala1-img {
+        width: 514px;
+        height: 135px;
+    }
+
+    .freedom1-img {
+        width: 110px;
+        height: 103px;
+    }
+
+    .freedom-town1 {
+        right: 10.5%;
+        bottom: 39.6%;
+    }
+
+    .headliner1-img {
+        width: 107px;
+        height: 50px;
+    }
+
+    .headliner-town1 {
+        right: 56.4%;
+        bottom: 87%;
+    }
+
+    .seoul-town1 {
+        right: 44.6%;
+        bottom: 92.8%;
+    }
+
+    .asylmura-img {
+        width: 491px;
+        height: 89px;
+    }
+
+    .asylmura-town1 {
+        right: 88.2%;
+        bottom: 82.1%;
+    }
+
+    .tokyo1-img {
+        width: 133px;
+        height: 79px;
+    }
+
+    .tokyo-town1 {
+        right: 87.2%;
+        bottom: 88%;
+    }
+
+    .seoul-img {
+        width: 160px;
+        height: 72px;
+    }
+
+    .tab__icon-div {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tab-icon__description {
+        height: 38px;
+    }
+
+    .sec-bird_icon-arrow {
+        left: 16px;
+        top: 39px;
+    }
+
+    .tab__icon-div:hover .tab-icon__description {
+        width: 90px;
+    }
+
+    .map-icon__btn {
+        padding: 12px 22px 14px 18px;
+        border-radius: 22px;
+    }
+
+    .bird-tab__link {
+        font-size: 18px;
+    } 
+
+
+
+}
